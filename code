@@ -1,0 +1,48 @@
+from aiogram import Bot, Dispatcher, types
+from aiogram.contrib.middlewares.logging import LoggingMiddleware
+from aiogram.utils import executor
+import logging
+
+    
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher(bot)
+dp.middleware.setup(LoggingMiddleware())
+
+@dp.message_handler(commands=['start'])
+async def send_welcome(message: types.Message):
+    await bot.send_message(message.chat.id, "Привет! Я бот по всем героям Dota 2 и их описанию. Если хотите продолжить, пропишите команду 'GO'.")
+
+@dp.message_handler(commands=['GO', 'go'])
+async def handle_go_command(message: types.Message):
+    await message.reply("Чтобы посмотреть любого героя, напишите /io для Io или /techies для Techies и т.д")
+
+@dp.message_handler(commands=['IO', 'io'])
+async def handle_io_command(message: types.Message):
+    await send_io_photo(message)
+
+async def send_io_photo(message: types.Message):
+    photo_path = 'wisp.jpg'  
+    caption = '''Io — это герой в игре Dota, который представляет собой совокупность всех сил притяжения и отторжения в материальном поле. Может выбрать один из двух аспектов:
+    Атакующий — Kritzkrieg, с которым Overcharge увеличивает скорость атаки и урон от заклинаний обоим связанным героям. 
+    Защитный — Medigun, предоставляющий броню и сопротивление магии соответственно. Ультимативная способность Io — Relocate, которая даёт возможность ему и связанному с ним союзнику перенестись в любую точку карты. Через несколько секунд Io телепортируется обратно, союзник же вернётся, только если он всё ещё привязан!'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['Techies', 'techies'])
+async def handle_techies_command(message: types.Message):
+    await send_techies_photo(message)
+
+async def send_techies_photo(message: types.Message):
+    photo_path = 'This.jpg'  
+    caption = '''Techies — вспомните длинные поля в 41, так вот они все были заминированы. Окунитесь в мир минных полей и самолетов-камикадзе на одном персонаже.\n
+                Хардлайн (3 позиция);\n
+                Саппорт (4 позиция);\n
+                Саппорт (5 позиция).'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True)
+
