@@ -1,30 +1,66 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.middlewares.logging import LoggingMiddleware
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.utils import executor
 import logging
 
-    
+API_TOKEN = ''   
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 dp.middleware.setup(LoggingMiddleware())
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await bot.send_message(message.chat.id, "Привет! Я бот по всем героям Dota 2 и их описанию. Если хотите продолжить, пропишите команду 'GO'.")
+    # создание клавиатуры
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    button_heroes = types.KeyboardButton("GO")  
+    keyboard.add(button_heroes)
+    await bot.send_message(message.chat.id, "Привет! Я бот по всем героям Dota 2 и их описанию.Если хотите продолжить, нажмите кнопку ниже 'GO'.", reply_markup=keyboard)
 
-@dp.message_handler(commands=['GO', 'go'])
-async def handle_go_command(message: types.Message):
-    await message.reply("Чтобы посмотреть любого героя, напишите /io для Io или /techies для Techies и т.д")
+@dp.message_handler(lambda message: message.text == "GO")  # Проверка на нажатие кнопки
+async def handle_heroes_command(message: types.Message):
+    await message.reply('''Посмотреть любого героя: 
 
-@dp.message_handler(commands=['IO', 'io'])
+/io 
+/techies 
+/antimage 
+/DrowRanger 
+/Abaddon 
+/Earthshake 
+/PhantomAssassin
+/Enigma
+/Kez
+/Spectre
+/Huskar
+/LegionCommander
+/Lina
+/Meepo
+/ArcWarden
+/Marci
+/Tidehunter
+''')
+
+@dp.message_handler(commands=['IO', 'io'])# выбор героя io аля чтоб небыло ошибкт с большой и маленькой буквы
 async def handle_io_command(message: types.Message):
     await send_io_photo(message)
 
 async def send_io_photo(message: types.Message):
     photo_path = 'wisp.jpg'  
-    caption = '''Io — это герой в игре Dota, который представляет собой совокупность всех сил притяжения и отторжения в материальном поле. Может выбрать один из двух аспектов:
-    Атакующий — Kritzkrieg, с которым Overcharge увеличивает скорость атаки и урон от заклинаний обоим связанным героям. 
-    Защитный — Medigun, предоставляющий броню и сопротивление магии соответственно. Ультимативная способность Io — Relocate, которая даёт возможность ему и связанному с ним союзнику перенестись в любую точку карты. Через несколько секунд Io телепортируется обратно, союзник же вернётся, только если он всё ещё привязан!'''
+    caption = '''Io — это герой в игре Dota,
+который представляет собой совокупность всех сил
+притяжения и отторжения в материальном поле.
+Может выбрать один из двух аспектов:
+Атакующий — Kritzkrieg,
+с которым Overcharge увеличивает скорость атаки и урон
+от заклинанийобоим связанным героям.
+Защитный — Medigun,
+предоставляющий броню и
+сопротивление магии соответственно.
+Ультимативная способность Io — Relocate,
+которая даёт возможность ему и связанному с ним союзнику
+перенестись в любую точку карты.
+Через несколько секунд Io телепортируется обратно,
+союзник же вернётся, только если он всё ещё привязан!'''
     
     with open(photo_path, 'rb') as photo:
         await message.answer_photo(photo, caption=caption)
@@ -35,14 +71,337 @@ async def handle_techies_command(message: types.Message):
 
 async def send_techies_photo(message: types.Message):
     photo_path = 'This.jpg'  
-    caption = '''Techies — вспомните длинные поля в 41, так вот они все были заминированы. Окунитесь в мир минных полей и самолетов-камикадзе на одном персонаже.\n
-                Хардлайн (3 позиция);\n
-                Саппорт (4 позиция);\n
-                Саппорт (5 позиция).'''
+    caption = '''Techies
+вспомните длинные поля в 41,
+так вот они все были заминированы.
+Окунитесь в мир минных полей и самолетов-камикадзе
+на одном персонаже.
+Хардлайн (3 позиция);
+Саппорт (4 позиция);
+Саппорт (5 позиция).'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+        
+@dp.message_handler(commands=['AntiMage', 'antimage'])
+async def handle_antimage_command(message: types.Message):  
+    await send_antimage_photo(message)  
+
+async def send_antimage_photo(message: types.Message):  
+    photo_path = 'antimage.jpg'  
+    caption = '''AntiMage
+Выжигает ману врагов атаками.
+Если AntiMage наберёт полную силу, мало кто сможет его остановить.
+Он способен забирать у врагов ману каждым ударом или телепортироваться
+на небольшие расстояния, что не позволяет врагам загнать его в угол.'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+        
+@dp.message_handler(commands=['DrowRanger', 'drowranger'])
+async def handle_drowranger_command(message: types.Message):  
+    await send_drowranger_photo(message)  
+
+async def send_drowranger_photo(message: types.Message):  
+    photo_path = 'drow.jpg'  
+    caption = '''Drow Ranger
+Она не промахнётся!
+Замедляет врагов ледяными стрелами
+Немногим удаётся спастись от Drow Ranger.
+Обезмолвив врагов морозной волной,
+она накрывает их градом замедляющих ледяных стрел,
+после которого мало кто способен выжить.'''
     
     with open(photo_path, 'rb') as photo:
         await message.answer_photo(photo, caption=caption)
 
-if __name__ == '__main__':
+@dp.message_handler(commands=['Abaddon', 'abaddon'])
+async def handle_abaddon_command(message: types.Message):  
+    await send_abaddon_photo(message)  
+
+async def send_abaddon_photo(message: types.Message):  
+    photo_path = 'aba.jpg'  
+    caption = '''Abaddon,
+способный лечиться за счёт
+вражеских атак,
+может пережить почти любое нападение.
+Он всегда готов вклиниться в битву,
+закрывая союзников щитом
+и запуская обоюдоострые витки мглы,
+которыми он увечит врагов
+и исцеляет товарищей.'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+
+@dp.message_handler(commands=['Earthshake', 'earthshaker'])
+async def handle_earthshaker_command(message: types.Message):  
+    await send_earthshaker_photo(message)  
+
+async def send_earthshaker_photo(message: types.Message):  
+    photo_path = 'hk.jpg'  
+    caption = '''Earthshaker
+Мешает врагам, оглушая их раз за разом.
+Словно голем или гаргулья,
+Рейгор когда-то лежал в земле,
+но сейчас свободно ступает по ней.
+В отличие от других,
+он создал себя своей волей
+и никому не служит. В беспокойных снах,
+заключённый глубоко в камне,
+он узнал, что жизнь проходит над ним.
+Любопытство пытало его.
+В сезон землетрясений пик горы
+Ишай стряхивал с себя рыхлые лавины,
+меняя тече'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['PhantomAssassin', 'phantomassassin'])
+async def handle_phantomassassin_command(message: types.Message):  
+    await send_phantomassassin_photo(message)  
+
+async def send_phantomassassin_photo(message: types.Message):  
+    photo_path = 'fa.jpg'  
+    caption = '''Phantom Assassin
+идёт в наступление,
+едва завидев свою жертву.
+Мгновенно сблизившись с ней,
+Мортред легко уклоняется от атак
+и обрушивает на врага удар за ударом,
+любой из которых может
+оказаться роковым.'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#1       
+@dp.message_handler(commands=['Enigma', 'enigma'])
+async def handle_Enigma_command(message: types.Message):  
+    await send_Enigma_photo(message)  
+
+async def send_Enigma_photo(message: types.Message):  
+    photo_path = 'en.jpg'  
+    caption = '''Enigma
+Затягивает врагов в чёрную дыру, нанося им урон
+О происхождении этой сущности
+неизвестно ровным счётом ничего.
+Многие опасаются Enigma из-за
+его способности создать чёрную дыру,
+которая удерживает врагов
+и делает их лёгкой мишенью.
+Вместе с вездесущими союзными
+эйдолонами он атакует врагов издалека.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#2
+@dp.message_handler(commands=['Huskar', 'huskar'])
+async def handle_Huskar_command(message: types.Message):  
+    await send_Huskar_photo(message)  
+
+async def send_Huskar_photo(message: types.Message):  
+    photo_path = 'hus.jpg'  
+    caption = '''Huskar
+Жертвует своим здоровьем,
+чтобы наносить больше урона
+Чем меньше у Huskar здоровья,
+тем опаснее он становится.
+Своим ультом он мгновенно лишает себя
+и противника части здоровья,
+а на грани смерти может обрушить
+на своих врагов шквал горящих копий.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#3
+@dp.message_handler(commands=['LegionCommander', 'legioncommander'])
+async def handle_LegionCommander_command(message: types.Message):  
+    await send_LegionCommander_photo(message)  
+
+async def send_LegionCommander_photo(message: types.Message):  
+    photo_path = 'lg.jpg'  
+    caption = '''Legion Commander
+Вот эта милфачка,
+играется как керии и как инициатор битв.
+Так и на легкой так и на сложной стоит.
+Из минусов нету контроля.
+Из плюсов если она раскачается
+и своей ультой затянет вас на дулэль
+ДА ЕЩЕ И ВЫИГРАЕТ, это гг.
+Она будет бегать по всей карте
+и искать самого слабого дабы
+баф от ульты рос и рос,
+чтобы урона было МИЛЛИАРД.
+Желательно убивать самой первой,
+чтобы не  добивала ультой лоу хпешных =)'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#4
+@dp.message_handler(commands=['Lina', 'lina'])
+async def handle_Lina_command(message: types.Message):  
+    await send_Lina_photo(message)  
+
+async def send_Lina_photo(message: types.Message):  
+    photo_path = 'lina.jpg'  
+    caption = '''Lina 
+Опасная и хрупкая Lina
+легко свалит любого одинокого врага.
+Она поражает противников огнём и молнией,
+а каждое произнесённое
+ей заклинание увеличивает скорость её атаки,
+не давая выжить никому.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#5
+@dp.message_handler(commands=['Meepo', 'meepo'])
+async def handle_Meepo_command(message: types.Message):  
+    await send_Meepo_photo(message)  
+
+async def send_Meepo_photo(message: types.Message):  
+    photo_path = 'meep.jpg'  
+    caption = '''Meepo
+Пятеро сильнее одного
+Призвав до пяти своих полноценных копий,
+Meepo способен сражаться на всех фронтах
+одновременно. Он распределяет своих клонов
+по полю боя и, заметив врага,
+приковывает его к земле,
+со взрывом телепортирует к себе
+остальные копии и добивает истощённую жертву.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#6
+@dp.message_handler(commands=['ArcWarden', 'arcwarden'])
+async def handle_ArcWarden_command(message: types.Message):  
+    await send_ArcWarden_photo(message)  
+
+async def send_ArcWarden_photo(message: types.Message):  
+    photo_path = 'arc.jpg'  
+    caption = '''Arc Warden
+Копирует себя, чтобы вести войну на два фронта
+Arc Warden — разбитый осколок
+той древней мощи,
+что породила самих Древних,
+и он намерен прекратить схватку Света и Тьмы.
+Сковывайте одиноких врагов
+потоками энергии или искажайте пространство,
+создавая защитное поле для союзников.
+Призывайте призрачные искры,
+нападающие на приблизившихся противников,
+или же полную копию самого себя
+со всеми предметами и способностями,
+способную сокрушить неприятеля.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#7
+@dp.message_handler(commands=['Kez', 'kez'])
+async def handle_Kez_command(message: types.Message):  
+    await send_Kez_photo(message)  
+
+async def send_Kez_photo(message: types.Message):  
+    photo_path = 'kez.jpg'  
+    caption = '''Kez
+Пернатое возмездие!
+Обычно в бою Кеза окрыляет фантазия:
+он на лету меняет катану на саи и обратно,
+чтобы при надобности нападать, рубить,
+парировать и отступать.
+Но когда Кез берётся за дело всерьёз,
+он может заранее приготовиться
+к любому развитию событий
+и верно распорядиться своим арсеналом,
+чтобы атаковать, избежать
+или попросту перехитрить противников.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+#8
+@dp.message_handler(commands=['Marci', 'marci'])
+async def handle_Marci_command(message: types.Message):  
+    await send_Marci_photo(message)  
+
+async def send_Marci_photo(message: types.Message):  
+    photo_path = 'mar.jpg'  
+    caption = '''Marci
+Скачет по полю боя и
+отбрасывает врагов стремительными атаками
+Доказывая, что неиссякаемая верность
+даёт несравненную силу,
+Марси всегда готова вступить в битву
+и не жалеет кулаков,
+чтобы защитить своих компаньонов.
+Легко перебрасывая друзей
+и врагов по полю боя,
+она с радостью врывается
+в любой поединок, предоставляет союзникам
+столь нужное преимущество
+и применяет скрытую силу, при виде которой
+даже боги предпочитают
+не вступать в конфликт с героиней.'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+
+@dp.message_handler(commands=['Tidehunter', 'tidehunter'])
+async def handle_Tidehunter_command(message: types.Message):  
+    await send_Tidehunter_photo(message)  
+
+async def send_Tidehunter_photo(message: types.Message):  
+    photo_path = 'arbuz.jpg'  
+    caption = '''Tidehunter,или же арбуз
+Этот повелитель морей,
+огромное существо у которого много хп
++ брони из-за чего убить его
+бывает иногда проблемой.
+Есть крутые скиллы
+на станн и на атаку по облости.
+Играется как танк'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['Spectre', 'spectre'])
+async def handle_Spectre_command(message: types.Message):  
+    await send_Spectre_photo(message)  
+
+async def send_Spectre_photo(message: types.Message):  
+    photo_path = 'spc.jpg'  
+    caption = '''Spectre
+У вас было когда нибудь ощущение,
+того что за вами следят?
+Так вот, если вы видите
+в вражеском пулле  этого героя.
+Бойтесь, ибо спрятаться от неё не получится.
+Можете бежать плакать, реветь вы умрёте!
+Если вы видите её в вашем пулле,
+можете радоваться ибо это,
+надеждная рука помощи в сложную драку.
+Самое главное дать ей раскачаться
+и купить нужные шмотки
+ибо на линии стоит очень плохо =)'''
+    
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+if __name__ == '__main__':  
     executor.start_polling(dp, skip_updates=True)
 
+
+                
