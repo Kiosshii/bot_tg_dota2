@@ -4,7 +4,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.utils import executor
 import logging
 
-API_TOKEN = ''   
+API_TOKEN = '7902424588:AAEY20T4msY8OQIMb-6ZDzYsZida3e15bLY'   
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 dp.middleware.setup(LoggingMiddleware())
@@ -150,6 +150,14 @@ async def handle_universal_heroes(message: types.Message):
 /Dazzle
 /Invoker
 /Broodmother
+/Venomancer
+/Visage
+/VoidSpirit
+/Windranger
+/WinterWyvern
+/VengefulSpirit
+/Snapfire
+/SandKing
 ''')
 
 @dp.message_handler(lambda message: not message.text.startswith('/'))  # Обработка некорректных команд
@@ -163,7 +171,7 @@ async def handle_io_command(message: types.Message):
     await send_io_photo(message)
 
 async def send_io_photo(message: types.Message):
-    photo_path = 'wisp.jpg'  
+    photo_path = '2007/wisp.jpg'  
     caption = '''
 Io — это герой в игре Dota,
 который представляет собой совокупность всех сил
@@ -189,7 +197,7 @@ async def handle_techies_command(message: types.Message):
     await send_techies_photo(message)
 
 async def send_techies_photo(message: types.Message):
-    photo_path = 'This.jpg'  
+    photo_path = '2007/This.jpg'  
     caption = '''Techies
 вспомните длинные поля в 41,
 так вот они все были заминированы.
@@ -207,7 +215,7 @@ async def handle_antimage_command(message: types.Message):
     await send_antimage_photo(message)  
 
 async def send_antimage_photo(message: types.Message):  
-    photo_path = 'antimage.jpg'  
+    photo_path = '2007/antimage.jpg'  
     caption = '''AntiMage
 Выжигает ману врагов атаками.
 Если AntiMage наберёт полную силу, мало кто сможет его остановить.
@@ -222,7 +230,7 @@ async def handle_drowranger_command(message: types.Message):
     await send_drowranger_photo(message)  
 
 async def send_drowranger_photo(message: types.Message):  
-    photo_path = 'drow.jpg'  
+    photo_path = '2007/drow.jpg'  
     caption = '''Drow Ranger
 Она не промахнётся!
 Замедляет врагов ледяными стрелами
@@ -239,7 +247,7 @@ async def handle_abaddon_command(message: types.Message):
     await send_abaddon_photo(message)  
 
 async def send_abaddon_photo(message: types.Message):  
-    photo_path = 'aba.jpg'  
+    photo_path = '2007/aba.jpg'  
     caption = '''Abaddon,
 способный лечиться за счёт
 вражеских атак,
@@ -259,7 +267,7 @@ async def handle_earthshaker_command(message: types.Message):
     await send_earthshaker_photo(message)  
 
 async def send_earthshaker_photo(message: types.Message):  
-    photo_path = 'hk.jpg'  
+    photo_path = '2007/hk.jpg'  
     caption = '''Earthshaker
 АХАХАХАХХАХА ЭТА ГОДЛИЗЛА БУДЕТ СНИТЬСЯ
 В КОШМАРАХ ВСЕХ ГЕРОЕВ КОТОРЫЕ СПАВНЯТ
@@ -278,7 +286,7 @@ async def handle_phantomassassin_command(message: types.Message):
     await send_phantomassassin_photo(message)  
 
 async def send_phantomassassin_photo(message: types.Message):  
-    photo_path = 'fa.jpg'  
+    photo_path = '2007/fa.jpg'  
     caption = '''Phantom Assassin
 идёт в наступление,
 едва завидев свою жертву.
@@ -296,7 +304,7 @@ async def handle_Enigma_command(message: types.Message):
     await send_Enigma_photo(message)  
 
 async def send_Enigma_photo(message: types.Message):  
-    photo_path = 'en.jpg'  
+    photo_path = '2007/en.jpg'  
     caption = '''Enigma
 Затягивает врагов в чёрную дыру, нанося им урон
 О происхождении этой сущности
@@ -317,7 +325,7 @@ async def handle_Huskar_command(message: types.Message):
     await send_Huskar_photo(message)  
 
 async def send_Huskar_photo(message: types.Message):  
-    photo_path = 'hus.jpg'  
+    photo_path = '2007/hus.jpg'  
     caption = '''Huskar
 Жертвует своим здоровьем,
 чтобы наносить больше урона
@@ -337,7 +345,7 @@ async def handle_LegionCommander_command(message: types.Message):
     await send_LegionCommander_photo(message)  
 
 async def send_LegionCommander_photo(message: types.Message):  
-    photo_path = 'lg.jpg'  
+    photo_path = '2007/lg.jpg'  
     caption = '''Legion Commander
 Вот эта милфачка,
 играется как керии и как инициатор битв.
@@ -362,7 +370,7 @@ async def handle_Lina_command(message: types.Message):
     await send_Lina_photo(message)  
 
 async def send_Lina_photo(message: types.Message):  
-    photo_path = 'lina.jpg'  
+    photo_path = '2007/lina.jpg'  
     caption = '''Lina 
 Опасная и хрупкая Lina
 легко свалит любого одинокого врага.
@@ -380,7 +388,7 @@ async def handle_Meepo_command(message: types.Message):
     await send_Meepo_photo(message)  
 
 async def send_Meepo_photo(message: types.Message):  
-    photo_path = 'meep.jpg'  
+    photo_path = '2007/meep.jpg'  
     caption = '''Meepo
 Пятеро сильнее одного
 Призвав до пяти своих полноценных копий,
@@ -400,7 +408,7 @@ async def handle_ArcWarden_command(message: types.Message):
     await send_ArcWarden_photo(message)  
 
 async def send_ArcWarden_photo(message: types.Message):  
-    photo_path = 'arc.jpg'  
+    photo_path = '2007/arc.jpg'  
     caption = '''Arc Warden
 Копирует себя, чтобы вести войну на два фронта
 Arc Warden — разбитый осколок
@@ -425,7 +433,7 @@ async def handle_Kez_command(message: types.Message):
     await send_Kez_photo(message)  
 
 async def send_Kez_photo(message: types.Message):  
-    photo_path = 'kez.jpg'  
+    photo_path = '2007/kez.jpg'  
     caption = '''Kez
 Пернатое возмездие!
 Обычно в бою Кеза окрыляет фантазия:
@@ -448,7 +456,7 @@ async def handle_Marci_command(message: types.Message):
     await send_Marci_photo(message)  
 
 async def send_Marci_photo(message: types.Message):  
-    photo_path = 'mar.jpg'  
+    photo_path = '2007/mar.jpg'  
     caption = '''Marci
 Скачет по полю боя и
 отбрасывает врагов стремительными атаками
@@ -476,7 +484,7 @@ async def handle_Tidehunter_command(message: types.Message):
     await send_Tidehunter_photo(message)  
 
 async def send_Tidehunter_photo(message: types.Message):  
-    photo_path = 'arbuz.jpg'  
+    photo_path = '2007/arbuz.jpg'  
     caption = '''Tidehunter,или же арбуз
 Этот повелитель морей,
 огромное существо у которого много хп
@@ -495,7 +503,7 @@ async def handle_Spectre_command(message: types.Message):
     await send_Spectre_photo(message)  
 
 async def send_Spectre_photo(message: types.Message):  
-    photo_path = 'spc.jpg'  
+    photo_path = '2007/spc.jpg'  
     caption = '''Spectre
 У вас было когда нибудь ощущение,
 того что за вами следят?
@@ -519,7 +527,7 @@ async def handle_axe_command(message: types.Message):
     await send_axe_photo(message)  
 
 async def send_axe_photo(message: types.Message):  
-    photo_path = 'axe.jpg'  
+    photo_path = '2007/axe.jpg'  
     caption = '''Axe
 рубит одного врага за другим,
 неизменно ступая впереди своей команды.
@@ -537,7 +545,7 @@ async def handle_CentaurWarrunner_command(message: types.Message):
     await send_CentaurWarrunner_photo(message)  
 
 async def send_CentaurWarrunner_photo(message: types.Message):  
-    photo_path = 'DR.jpg'  
+    photo_path = '2007/DR.jpg'  
     caption = '''Centaur Warrunner
 умело наносит и принимает урон.
 Он ведёт команду в наступление,
@@ -555,7 +563,7 @@ async def handle_AncientApparition_command(message: types.Message):
     await send_AncientApparition_photo(message)  
 
 async def send_AncientApparition_photo(message: types.Message):  
-    photo_path = 'fi.jpg'  
+    photo_path = '2007/fi.jpg'  
     caption = '''Ancient Apparition
 способный запустить мощный
 заряд льда через всё поле битвы,
@@ -584,7 +592,7 @@ async def handle_Bloodseeker_command(message: types.Message):
     await send_Bloodseeker_photo(message)  
 
 async def send_Bloodseeker_photo(message: types.Message):  
-    photo_path = 'bl.jpg'  
+    photo_path = '2007/bl.jpg'  
     caption = '''Bloodseeker
 Bпостоянно ставит противников
 перед непростым выбором.
@@ -601,7 +609,7 @@ async def handle_Bane_command(message: types.Message):
     await send_Bane_photo(message)  
 
 async def send_Bane_photo(message: types.Message):  
-    photo_path = 'ben.jpg'  
+    photo_path = '2007/ben.jpg'  
     caption = '''Bane
 наводит ужас на врагов
 своим арсеналом обездвиживающих способностей.
@@ -618,7 +626,7 @@ async def handle_Chen_command(message: types.Message):
     await send_Chen_photo(message)  
 
 async def send_Chen_photo(message: types.Message):  
-    photo_path = 'chen.jpg'  
+    photo_path = '2007/chen.jpg'  
     caption = '''Chen
 Обратив лесных существ в свою веру,
 Chen ведёт свою импровизированную
@@ -637,7 +645,7 @@ async def handle_DarkSeer_command(message: types.Message):
     await send_DarkSeer_photo(message)  
 
 async def send_DarkSeer_photo(message: types.Message):  
-    photo_path = 'drk.jpg'  
+    photo_path = '2007/drk.jpg'  
     caption = '''Dark Seer
 Изворотливый стратег Dark Seer
 мастерски манипулирует
@@ -654,7 +662,7 @@ async def handle_Dazzle_command(message: types.Message):
     await send_Dazzle_photo(message)  
 
 async def send_Dazzle_photo(message: types.Message):  
-    photo_path = 'dazl.jpg'  
+    photo_path = '2007/dazl.jpg'  
     caption = '''Dazzle
 Рождённый поддерживать своих сторонников,
 Dazzle не даёт соратникам умереть,
@@ -672,7 +680,7 @@ async def handle_Hoodwink_command(message: types.Message):
     await send_Hoodwink_photo(message)  
 
 async def send_Hoodwink_photo(message: types.Message):  
-    photo_path = 'hood.jpg'  
+    photo_path = '2007/hood.jpg'  
     caption = '''Hoodwink
 всегда спешит туда,
 где ждёт беда, и готова противостоять
@@ -693,7 +701,7 @@ async def handle_CrystalMaiden_command(message: types.Message):
     await send_CrystalMaiden_photo(message)  
 
 async def send_CrystalMaiden_photo(message: types.Message):  
-    photo_path = 'krs.jpg'  
+    photo_path = '2007/krs.jpg'  
     caption = '''Crystal Maiden
 пригодится любой команде,
 ведь она даёт союзникам ману
@@ -710,7 +718,7 @@ async def handle_Juggernaut_command(message: types.Message):
     await send_Juggernaut_photo(message)  
 
 async def send_Juggernaut_photo(message: types.Message):  
-    photo_path = 'jag.jpg'  
+    photo_path = '2007/jag.jpg'  
     caption = '''Juggernaut
 разрубает своих врагов шквалом
 рассекающих ударов. Мало кто сможет
@@ -727,7 +735,7 @@ async def handle_DeathProphet_command(message: types.Message):
     await send_DeathProphet_photo(message)  
 
 async def send_DeathProphet_photo(message: types.Message):  
-    photo_path = '123.jpg'  
+    photo_path = '2007/123.jpg'  
     caption = '''Death Prophet
 Своей армией призраков
 уничтожает как противников,
@@ -744,7 +752,7 @@ async def handle_Necrophos_command(message: types.Message):
     await send_Necrophos_photo(message)  
 
 async def send_Necrophos_photo(message: types.Message):  
-    photo_path = 'nec.jpg'  
+    photo_path = '2007/nec.jpg'  
     caption = '''Necrophos
 всюду несёт благополучие
 друзьям и смерть — врагам.
@@ -765,7 +773,7 @@ async def handle_KeeperoftheLight_command(message: types.Message):
     await send_KeeperoftheLight_photo(message)  
 
 async def send_KeeperoftheLight_photo(message: types.Message):  
-    photo_path = 'kpz.jpg'  
+    photo_path = '2007/kpz.jpg'  
     caption = '''Keeper of the Light
 полезен любой команде.
 Он манипулирует маной
@@ -782,7 +790,7 @@ async def handle_Lion_command(message: types.Message):
     await send_Lion_photo(message)  
 
 async def send_Lion_photo(message: types.Message):  
-    photo_path = 'lion.jpg'  
+    photo_path = '2007/lion.jpg'  
     caption = '''Lion
 не даёт врагам выбраться
 из своей цепкой хватки.
@@ -800,7 +808,7 @@ async def handle_Lifestealer_command(message: types.Message):
     await send_Lifestealer_photo(message)  
 
 async def send_Lifestealer_photo(message: types.Message):  
-    photo_path = 'zom.jpg'  
+    photo_path = '2007/zom.jpg'  
     caption = '''Lifestealer
 смог подобраться близко
 к своей жертве, то её
@@ -820,7 +828,7 @@ async def handle_Invoker_command(message: types.Message):
     await send_Invoker_photo(message)  
 
 async def send_Invoker_photo(message: types.Message):  
-    photo_path = 'inoker.jpg'  
+    photo_path = '2007/inoker.jpg'  
     caption = '''Invoker
 Благодаря обширному арсеналу заклинаний
 Invoker может приспособиться
@@ -839,7 +847,7 @@ async def handle_Muerta_command(message: types.Message):
     await send_Muerta_photo(message)  
 
 async def send_Muerta_photo(message: types.Message):  
-    photo_path = 'muerta.png'  
+    photo_path = '2007/muerta.png'  
     caption = '''Muerta
 Повелительница смерти Муэрта
 ступает по миру живых,
@@ -861,7 +869,7 @@ async def handle_Broodmother_command(message: types.Message):
     await send_Broodmother_photo(message)  
 
 async def send_Broodmother_photo(message: types.Message):  
-    photo_path = 'mama.jpg'  
+    photo_path = '2007/mama.jpg'  
     caption = '''Broodmother
 Скользя по своей паутине,
 Broodmother взращивает армию пауков,
@@ -881,7 +889,7 @@ async def handle_Puck_command(message: types.Message):
     await send_Puck_photo(message)  
 
 async def send_Puck_photo(message: types.Message):  
-    photo_path = 'puck.jpg'  
+    photo_path = '2007/puck.jpg'  
     caption = '''Puck
 Игривый и увёртливый Puck
 мастерски запутывает противников.
@@ -901,7 +909,7 @@ async def handle_Alchemist_command(message: types.Message):
     await send_Alchemist_photo(message)  
 
 async def send_Alchemist_photo(message: types.Message):  
-    photo_path = 'alko.jpg'  
+    photo_path = '2007/alko.jpg'  
     caption = '''Alchemist или же Алхимик
 Ходит со своим дружком
 ( умным) на спине и кидают зелья,
@@ -917,7 +925,7 @@ async def handle_Bristleback_command(message: types.Message):
     await send_Bristleback_photo(message)  
 
 async def send_Bristleback_photo(message: types.Message):  
-    photo_path = 'tvar.jpg'  
+    photo_path = '2007/tvar.jpg'  
     caption = '''Bristleback или же Ёжик
 Такая противная тварь это жесть.
 Ходит плюется в вас слизью чтобы
@@ -935,7 +943,7 @@ async def handle_ChaosKnight_command(message: types.Message):
     await send_ChaosKnight_photo(message)  
 
 async def send_ChaosKnight_photo(message: types.Message):  
-    photo_path = 'xxx.jpg'  
+    photo_path = '2007/xxx.jpg'  
     caption = '''Chaos Knight 
  сам по себе армия.
  Он способен призывать кавалерию
@@ -953,7 +961,7 @@ async def handle_Dawnbreaker_command(message: types.Message):
     await send_Dawnbreaker_photo(message)  
 
 async def send_Dawnbreaker_photo(message: types.Message):  
-    photo_path = 'khk.jpg'  
+    photo_path = '2007/khk.jpg'  
     caption = '''Dawnbreaker
 Честно не знаю почему ее все так любят,
 обычный персонаж ну ладно
@@ -972,7 +980,7 @@ async def handle_Doom_command(message: types.Message):
     await send_Doom_photo(message)  
 
 async def send_Doom_photo(message: types.Message):  
-    photo_path = 'doom.jpg'  
+    photo_path = '2007/doom.jpg'  
     caption = '''Doom
 Doom забирает жизни своих врагов разными способами.
 Он пожирает существ, чтобы перенять их способности,
@@ -987,7 +995,7 @@ async def handle_EarthSpirit_command(message: types.Message):
     await send_EarthSpirit_photo(message)  
 
 async def send_EarthSpirit_photo(message: types.Message):  
-    photo_path = '3131.jpg'  
+    photo_path = '2007/3131.jpg'  
     caption = '''Earth Spirit или же Земеля
 держит противников в смятении
 и поддерживает друзей в бою.
@@ -1008,7 +1016,7 @@ async def handle_ElderTitan_command(message: types.Message):
     await send_ElderTitan_photo(message)  
 
 async def send_ElderTitan_photo(message: types.Message):  
-    photo_path = 'edrtit.jpg'  
+    photo_path = '2007/edrtit.jpg'  
     caption = '''Elder Titan
 Разведав территорию своим астральным духом,
 Elder Titan готов атаковать с любого направления.
@@ -1025,7 +1033,7 @@ async def handle_Kunkka_command(message: types.Message):
     await send_Kunkka_photo(message)  
 
 async def send_Kunkka_photo(message: types.Message):  
-    photo_path = 'kun.jpg'  
+    photo_path = '2007/kun.jpg'  
     caption = '''Kunkka или Кунка
 АРРР СВИСТАТЬ ВСЕХ
 НАВВЕРХ ЯКОРЬ МНЕ В ЗАД
@@ -1046,7 +1054,7 @@ async def handle_Mars_command(message: types.Message):
     await send_Mars_photo(message)  
 
 async def send_Mars_photo(message: types.Message):  
-    photo_path = 'mars.jpg'  
+    photo_path = '2007/mars.jpg'  
     caption = '''Mars или Марс или Маяс)
  рождён для сражений: он пронзает врагов
  своим легендарным копьём, а от нападений
@@ -1078,7 +1086,7 @@ async def handle_NightStalker_command(message: types.Message):
     await send_NightStalker_photo(message)  
 
 async def send_NightStalker_photo(message: types.Message):  
-    photo_path = 'stalker.jpg'  
+    photo_path = '2007/stalker.jpg'  
     caption = '''Night Stalker
 Когда солнце скрывается за горизонтом,
 на охоту выходит Night Stalker.
@@ -1095,7 +1103,7 @@ async def handle_OgreMagi_command(message: types.Message):
     await send_OgreMagi_photo(message)  
 
 async def send_OgreMagi_photo(message: types.Message):  
-    photo_path = '222.jpg'  
+    photo_path = '2007/222.jpg'  
     caption = '''Ogre Magi
 ЫХЫЫХ ОГР ДВЕ ХАЛАВЫ
 Благодаря возможности многократно
@@ -1114,7 +1122,7 @@ async def handle_Omniknight_command(message: types.Message):
     await send_Omniknight_photo(message)  
 
 async def send_Omniknight_photo(message: types.Message):  
-    photo_path = 'is.jpg'  
+    photo_path = '2007/is.jpg'  
     caption = '''Omniknight
 Ну тварюга если честн полная
 всегда готов помочь своей команде
@@ -1132,7 +1140,7 @@ async def handle_PrimalBeast_command(message: types.Message):
     await send_PrimalBeast_photo(message)  
 
 async def send_PrimalBeast_photo(message: types.Message):  
-    photo_path = 'terex.jpg'  
+    photo_path = '2007/terex.jpg'  
     caption = '''Primal Beast или Динозаврик 
 Primal Beast свирепо
 расталкивает врагов и союзников,
@@ -1154,7 +1162,7 @@ async def handle_Pudge_command(message: types.Message):
     await send_Pudge_photo(message)  
 
 async def send_Pudge_photo(message: types.Message):  
-    photo_path = 'pudg.jpg'  
+    photo_path = '2007/pudg.jpg'  
     caption = '''Pudge
 ОДА СБОРКА ИЗ 9 МОМЧЕГОВ НА ПУДЖА ПРИСУТСТВУЕТ?)
 Каждый точный бросок знаменитого
@@ -1186,7 +1194,7 @@ async def handle_Slardar_command(message: types.Message):
     await send_Slardar_photo(message)  
 
 async def send_Slardar_photo(message: types.Message):  
-    photo_path = 'riba.jpg'  
+    photo_path = '2007/riba.jpg'  
     caption = '''Slardar
 Всегда готовый найти и сокрушить врагов
 Slardar шустро вползает в битву. Раскрыв
@@ -1203,7 +1211,7 @@ async def handle_SpiritBreaker_command(message: types.Message):
     await send_SpiritBreaker_photo(message)  
 
 async def send_SpiritBreaker_photo(message: types.Message):  
-    photo_path = 'pivo.jpg'  
+    photo_path = '2007/pivo.jpg'  
     caption = '''Spirit Breaker или Подпивасик)
 Если появится подкова над вашей
 головой ну вы уже явно не убежите)
@@ -1224,7 +1232,7 @@ async def handle_Sven_command(message: types.Message):
     await send_Sven_photo(message)  
 
 async def send_Sven_photo(message: types.Message):  
-    photo_path = 'sven.jpg'  
+    photo_path = '2007/sven.jpg'  
     caption = '''Sven 
 всегда рад сражению.
 Он оглушает столпившихся врагов,
@@ -1240,7 +1248,7 @@ async def handle_Timbersaw_command(message: types.Message):
     await send_Timbersaw_photo(message)  
 
 async def send_Timbersaw_photo(message: types.Message):  
-    photo_path = 'drova.jpg'  
+    photo_path = '2007/drova.jpg'  
     caption = '''Timbersaw
 АХАХАХХА ЧЕЛОВЕК БЕНЗОПИЛА НЕНАВИДЕТЬ ДЕРЕВЬЯ ВСЕ ДЕРЕВЬЯ ДОЛЖНЫ БЫТЬ РАЗРУШЕНЫ 
 ВЫХЫХВАЫВХЗПЫХЫПЗХЫПЗЫ ХУК МИНУС ДЕРЕВЬЯ ПИЛА ЛЕТАЕТ ПИЛА СТРЕЛЯЕТ АЗАЗАХАХАХАХАХ
@@ -1254,7 +1262,7 @@ async def handle_Tiny_command(message: types.Message):
     await send_Tiny_photo(message)  
 
 async def send_Tiny_photo(message: types.Message):  
-    photo_path = 'tiny.jpg'  
+    photo_path = '2007/tiny.jpg'  
     caption = '''Tiny
 становящийся больше и сильнее по ходу битвы,
 устрашает противника. Он швыряет героев
@@ -1271,7 +1279,7 @@ async def handle_TreantProtector_command(message: types.Message):
     await send_TreantProtector_photo(message)  
 
 async def send_TreantProtector_photo(message: types.Message):  
-    photo_path = 'derevo.jpg'  
+    photo_path = '2007/derevo.jpg'  
     caption = '''Treant Protector
 Великодушный  защищает своих соратников
 и союзные постройки восстанавливающей бронёй.
@@ -1288,7 +1296,7 @@ async def handle_Tusk_command(message: types.Message):
     await send_Tusk_photo(message)  
 
 async def send_Tusk_photo(message: types.Message):  
-    photo_path = 'tusk.jpg'  
+    photo_path = '2007/tusk.jpg'  
     caption = '''Tusk
  никогда не против затеять драку.
  Он отрезает врагам путь
@@ -1301,27 +1309,6 @@ async def send_Tusk_photo(message: types.Message):
     with open(photo_path, 'rb') as photo:
         await message.answer_photo(photo, caption=caption)
 
-#7
-@dp.message_handler(commands=['Undying', 'undying'])  
-async def handle_Undying_command(message: types.Message):  
-    await send_Undying_photo(message)  
-
-async def send_Undying_photo(message: types.Message):  
-    photo_path = ''  
-    caption = '''Undying
-Волочась к битве,
-Undying даёт врагам выбор:
-они либо бегут от его ярости,
-либо погибают от неё же. Он
-забирает себе жизненные силы
-противников и призывает толпы
-цепких мертвецов. К моменту,
-когда он наконец превратится
-в массивного трупного голема,
-врагов может уже не стать'''
-    
-    with open(photo_path, 'rb') as photo:
-        await message.answer_photo(photo, caption=caption)
 
 #8
 @dp.message_handler(commands=['Underlord', 'underlord'])  
@@ -1329,7 +1316,7 @@ async def handle_Underlord_command(message: types.Message):
     await send_Underlord_photo(message)  
 
 async def send_Underlord_photo(message: types.Message):  
-    photo_path = 'Undying.jpg'  
+    photo_path = '2007/Undying.jpg'  
     caption = '''Underlord
 обрушивает волны рокового пламени на врагов,
 обездвиженных своей злобной хваткой.
@@ -1351,7 +1338,7 @@ async def handle_WraithKing_command(message: types.Message):
     await send_WraithKing_photo(message)  
 
 async def send_WraithKing_photo(message: types.Message):  
-    photo_path = 'WraithKing.jpg'  
+    photo_path = '2007/WraithKing.jpg'  
     caption = '''Wraith King
 бесстрашно рвётся в бой,
 оглушая и разрубая врагов,
@@ -1370,7 +1357,7 @@ async def handle_BountyHunter_command(message: types.Message):
     await send_BountyHunter_photo(message)  
 
 async def send_BountyHunter_photo(message: types.Message):  
-    photo_path = 'hunt.jpg'  
+    photo_path = '2007/hunt.jpg'  
     caption = '''Bounty Hunter
 незримо крадётся по следам своих
 врагов и не даёт им скрыться из виду.
@@ -1387,7 +1374,7 @@ async def handle_Clinkz_command(message: types.Message):
     await send_Clinkz_photo(message)  
 
 async def send_Clinkz_photo(message: types.Message):  
-    photo_path = 'demon.jpg'  
+    photo_path = '2007/demon.jpg'  
     caption = '''Clinkz
 незримо рыщет по полю битвы,
 и от внезапного нападения не спастись никому.
@@ -1406,7 +1393,7 @@ async def handle_FacelessVoid_command(message: types.Message):
     await send_FacelessVoid_photo(message)  
 
 async def send_FacelessVoid_photo(message: types.Message):  
-    photo_path = 'vaid.jpg'  
+    photo_path = '2007/vaid.jpg'  
     caption = '''Faceless Void
 Для Faceless Void важна каждая секунда.
 Он стремительно перемещается, ускорив
@@ -1426,7 +1413,7 @@ async def handle_EmberSpirit_command(message: types.Message):
     await send_EmberSpirit_photo(message)  
 
 async def send_EmberSpirit_photo(message: types.Message):  
-    photo_path = 'ogon.jpg'  
+    photo_path = '2007/ogon.jpg'  
     caption = '''Ember Spirit
 Ловкий и неуловимый стремительно
 атакует всех врагов вокруг
@@ -1443,7 +1430,7 @@ async def handle_Gyrocopter_command(message: types.Message):
     await send_Gyrocopter_photo(message)  
 
 async def send_Gyrocopter_photo(message: types.Message):  
-    photo_path = 'sass.jpg'  
+    photo_path = '2007/sass.jpg'  
     caption = '''Gyrocopter
 летает по полю боя, держа свой арсенал наготове.
 Расстреливая всех ближайших врагов
@@ -1459,7 +1446,7 @@ async def handle_Luna_command(message: types.Message):
     await send_Luna_photo(message)  
 
 async def send_Luna_photo(message: types.Message):  
-    photo_path = 'luna.jpg'  
+    photo_path = '2007/luna.jpg'  
     caption = '''Luna
 быстро врывается в битву,
 кромсая противника своими отскакивающими
@@ -1475,7 +1462,7 @@ async def handle_Medusa_command(message: types.Message):
     await send_Medusa_photo(message)  
 
 async def send_Medusa_photo(message: types.Message):  
-    photo_path = 'medusa.jpg'  
+    photo_path = '2007/medusa.jpg'  
     caption = '''Medusa
 всегда возглавляет наступление.
 Она сдерживает любое нападение
@@ -1493,7 +1480,7 @@ async def handle_MonkeyKing_command(message: types.Message):
     await send_MonkeyKing_photo(message)  
 
 async def send_MonkeyKing_photo(message: types.Message):  
-    photo_path = 'monkey.jpg'  
+    photo_path = '2007/monkey.jpg'  
     caption = '''Monkey King
 В поисках славной битвы скачет
 по кронам деревьев и застаёт врагов врасплох,
@@ -1512,7 +1499,7 @@ async def handle_Morphling_command(message: types.Message):
     await send_Morphling_photo(message)  
 
 async def send_Morphling_photo(message: types.Message):  
-    photo_path = 'morf.jpg'  
+    photo_path = '2007/morf.jpg'  
     caption = '''Morphling
 Благодаря способности
 вливаться в любую ситуацию Morphling увёртлив
@@ -1529,7 +1516,7 @@ async def handle_NagaSiren_command(message: types.Message):
     await send_NagaSiren_photo(message)  
 
 async def send_NagaSiren_photo(message: types.Message):  
-    photo_path = 'seldka.jpg'  
+    photo_path = '2007/seldka.jpg'  
     caption = '''Naga Siren
  отправляет в наступление свои копии,
  а затем связывает и убивает врагов.
@@ -1546,7 +1533,7 @@ async def handle_PhantomLancer_command(message: types.Message):
     await send_PhantomLancer_photo(message)  
 
 async def send_PhantomLancer_photo(message: types.Message):  
-    photo_path = 'makaka.jpg'  
+    photo_path = '2007/makaka.jpg'  
     caption = '''Phantom Lancer
 уничтожает противников бесконечным запасом
 своих клонов. Его армия иллюзий сметает
@@ -1562,7 +1549,7 @@ async def handle_Razor_command(message: types.Message):
     await send_Razor_photo(message)  
 
 async def send_Razor_photo(message: types.Message):  
-    photo_path = 'razor.jpg'  
+    photo_path = '2007/razor.jpg'  
     caption = '''Razor
 властитель смертоносной бури,
 всегда готов к сражению.
@@ -1578,7 +1565,7 @@ async def handle_Riki_command(message: types.Message):
     await send_Riki_photo(message)  
 
 async def send_Riki_photo(message: types.Message):  
-    photo_path = 'riki.jpg'  
+    photo_path = '2007/riki.jpg'  
     caption = '''Riki
 крадётся по полю боя, скрываясь от глаз
 противника. Он тщательно выжидает момент
@@ -1593,7 +1580,7 @@ async def handle_ShadowFiend_command(message: types.Message):
     await send_ShadowFiend_photo(message)  
 
 async def send_ShadowFiend_photo(message: types.Message):  
-    photo_path = 'sf.jpg'  
+    photo_path = '2007/sf.jpg'  
     caption = '''Shadow Fiend
 КОЙЛ КОЙЛ КОЙЛ ДЕВКА ПРЯМО ПОДО МНОЙ
 НУ ТУПА КОРОЧЕ ZXC ЧЕЛИК ДЛЯ 1 НА 1
@@ -1608,7 +1595,7 @@ async def handle_Slark_command(message: types.Message):
     await send_Slark_photo(message)  
 
 async def send_Slark_photo(message: types.Message):  
-    photo_path = 'slark.jpg'  
+    photo_path = '2007/slark.jpg'  
     caption = '''Slark
 способен впрыгнуть в гущу
 сражения и выйти из него живым.
@@ -1626,7 +1613,7 @@ async def handle_Sniper_command(message: types.Message):
     await send_Sniper_photo(message)  
 
 async def send_Sniper_photo(message: types.Message):  
-    photo_path = 'sna.jpg'  
+    photo_path = '2007/sna.jpg'  
     caption = '''Sniper
 Сеять смерть на расстоянии — вот что
 умеет лучше всего. Он сдерживает
@@ -1641,7 +1628,7 @@ async def handle_TemplarAssassin_command(message: types.Message):
     await send_TemplarAssassin_photo(message)  
 
 async def send_TemplarAssassin_photo(message: types.Message):  
-    photo_path = 'templ.jpg'  
+    photo_path = '2007/templ.jpg'  
     caption = '''Templar Assassin
 заполняет поле боя замедляющими ловушками
 и прячется в невидимости,готовясь в любой
@@ -1658,7 +1645,7 @@ async def handle_Terrorblade_command(message: types.Message):
     await send_Terrorblade_photo(message)  
 
 async def send_Terrorblade_photo(message: types.Message):  
-    photo_path = 'teror.jpg'  
+    photo_path = '2007/teror.jpg'  
     caption = '''Terrorblade
 Своими могучими иллюзиями он обманывает
 врагов и разрушает их постройки,
@@ -1674,7 +1661,7 @@ async def handle_TrollWarlord_command(message: types.Message):
     await send_TrollWarlord_photo(message)  
 
 async def send_TrollWarlord_photo(message: types.Message):  
-    photo_path = 'TrollWarlord.jpg'  
+    photo_path = '2007/TrollWarlord.jpg'  
     caption = '''Troll Warlord
 Грозный боец Troll Warlord способен
 сражаться как в ближнем,
@@ -1693,7 +1680,7 @@ async def handle_Ursa_command(message: types.Message):
     await send_Ursa_photo(message)  
 
 async def send_Ursa_photo(message: types.Message):  
-    photo_path = 'ursa.jpg'  
+    photo_path = '2007/ursa.jpg'  
     caption = '''Ursa
 раздирает плоть своей жертвы,
 с каждым ударом нанося ей всё
@@ -1710,7 +1697,7 @@ async def handle_Viper_command(message: types.Message):
     await send_Viper_photo(message)  
 
 async def send_Viper_photo(message: types.Message):  
-    photo_path = 'vip.jpg'  
+    photo_path = '2007/vip.jpg'  
     caption = '''Viper
 Ядовитый Viper несёт погибель
 любой своей жертве. Токсины,
@@ -1727,7 +1714,7 @@ async def handle_Weaver_command(message: types.Message):
     await send_Weaver_photo(message)  
 
 async def send_Weaver_photo(message: types.Message):  
-    photo_path = 'Weaver.jpg'  
+    photo_path = '2007/Weaver.jpg'  
     caption = '''Weaver
 сбегает от врагов лишь для того,
 чтобы напасть вновь. Он способен
@@ -1746,7 +1733,7 @@ async def handle_AncientApparition_command(message: types.Message):
     await send_AncientApparition_photo(message)  
 
 async def send_AncientApparition_photo(message: types.Message):  
-    photo_path = '101.jpg'  
+    photo_path = '2007/101.jpg'  
     caption = '''Ancient Apparition
 способный запустить мощный заряд льда
 через всё поле битвы, может заморозить
@@ -1763,7 +1750,7 @@ async def handle_Disruptor_command(message: types.Message):
     await send_Disruptor_photo(message)  
 
 async def send_Disruptor_photo(message: types.Message):  
-    photo_path = '102.jpg'  
+    photo_path = '2007/102.jpg'  
     caption = '''Disruptor
 мастерски разрушает планы врагов.
 Он способен создать непроходимый
@@ -1781,7 +1768,7 @@ async def handle_Enchantress_command(message: types.Message):
     await send_Enchantress_photo(message)  
 
 async def send_Enchantress_photo(message: types.Message):  
-    photo_path = '103.jpg'  
+    photo_path = '2007/103.jpg'  
     caption = '''Enchantress
 Опасная вблизи и смертоносная на расстоянии,
 Enchantress пронзает врагов атаками,
@@ -1800,7 +1787,7 @@ async def handle_Grimstroke_command(message: types.Message):
     await send_Grimstroke_photo(message)  
 
 async def send_Grimstroke_photo(message: types.Message):  
-    photo_path = '105.jpg'  
+    photo_path = '2007/105.jpg'  
     caption = '''Grimstroke
 Мастерски манипулируя битвой со стороны,
 Grimstroke изучает каждого неприятеля до
@@ -1821,7 +1808,7 @@ async def handle_Jakiro_command(message: types.Message):
     await send_Jakiro_photo(message)  
 
 async def send_Jakiro_photo(message: types.Message):  
-    photo_path = '106.jpg'  
+    photo_path = '2007/106.jpg'  
     caption = '''Jakiro
 Не довольствуясь одним только огнём,
 близнецы примораживают к земле
@@ -1837,7 +1824,7 @@ async def handle_Leshrac_command(message: types.Message):
     await send_Leshrac_photo(message)  
 
 async def send_Leshrac_photo(message: types.Message):  
-    photo_path = '108.jpg'  
+    photo_path = '2007/108.jpg'  
     caption = '''Leshrac
 Своими мощными заклинаниями Leshrac
 одинаково хорошо справляется и с врагами,
@@ -1854,7 +1841,7 @@ async def handle_Lich_command(message: types.Message):
     await send_Lich_photo(message)  
 
 async def send_Lich_photo(message: types.Message):  
-    photo_path = '110.jpg'  
+    photo_path = '2007/110.jpg'  
     caption = '''Lich
 Паря над полем битвы,
 Lich подпитывает свои силы
@@ -1873,7 +1860,7 @@ async def handle_Oracle_command(message: types.Message):
     await send_Oracle_photo(message)  
 
 async def send_Oracle_photo(message: types.Message):  
-    photo_path = '112.jpg'  
+    photo_path = '2007/112.jpg'  
     caption = '''Oracle
 Аккуратно сочетая свои
 замысловатые умения,
@@ -1893,7 +1880,7 @@ async def handle_OutworldDestroyer_command(message: types.Message):
     await send_OutworldDestroyer_photo(message)  
 
 async def send_OutworldDestroyer_photo(message: types.Message):  
-    photo_path = '115.jpg'  
+    photo_path = '2007/115.jpg'  
     caption = '''Outworld Destroyer
 Похищая разум своих жертв, Outworld Destroyer
 превращает чистый интеллект
@@ -1910,7 +1897,7 @@ async def handle_Pugna_command(message: types.Message):
     await send_Pugna_photo(message)  
 
 async def send_Pugna_photo(message: types.Message):  
-    photo_path = '120.jpg'  
+    photo_path = '2007/120.jpg'  
     caption = '''Pugna
 Умелый колдун Pugna обращает силы противника
 против него же, подрывая его
@@ -1928,7 +1915,7 @@ async def handle_QueenofPain_command(message: types.Message):
     await send_QueenofPain_photo(message)  
 
 async def send_QueenofPain_photo(message: types.Message):  
-    photo_path = '125.jpg'  
+    photo_path = '2007/125.jpg'  
     caption = '''Queen of Pain
 нападает без предупреждения,
 уничтожая собравшихся вместе
@@ -1946,7 +1933,7 @@ async def handle_Ringmaster_command(message: types.Message):
     await send_Ringmaster_photo(message)  
 
 async def send_Ringmaster_photo(message: types.Message):  
-    photo_path = '130.jpg'  
+    photo_path = '2007/130.jpg'  
     caption = '''Ringmaster
 Поле боя — театр, а Колиостро на нём тот ещё режиссёр-затейник.
 Управляя боями с присущим артисту шиком, он укрощает врагов
@@ -1964,7 +1951,7 @@ async def handle_Rubick_command(message: types.Message):
     await send_Rubick_photo(message)  
 
 async def send_Rubick_photo(message: types.Message):  
-    photo_path = '159.jpg'  
+    photo_path = '2007/159.jpg'  
     caption = '''Rubick
 неустанно ищет полезные вражеские
 способности, которые можно использовать
@@ -1980,7 +1967,7 @@ async def handle_ShadowDemon_command(message: types.Message):
     await send_ShadowDemon_photo(message)  
 
 async def send_ShadowDemon_photo(message: types.Message):  
-    photo_path = '160.jpg'  
+    photo_path = '2007/160.jpg'  
     caption = '''Shadow Demon
 опасен своей способностью наносить
 урон и разведывать поле боя облаками
@@ -1999,7 +1986,7 @@ async def handle_ShadowShaman_command(message: types.Message):
     await send_ShadowShaman_photo(message)  
 
 async def send_ShadowShaman_photo(message: types.Message):  
-    photo_path = '170.jpg'  
+    photo_path = '2007/170.jpg'  
     caption = '''Shadow Shaman
 быстро расчищает своей команде
 путь до вражеского Древнего. Он способен
@@ -2017,7 +2004,7 @@ async def handle_Silencer_command(message: types.Message):
     await send_Silencer_photo(message)  
 
 async def send_Silencer_photo(message: types.Message):  
-    photo_path = '200.jpg'  
+    photo_path = '2007/200.jpg'  
     caption = '''Silencer
 изменяет ход каждого сражения,
 запрещая врагам использовать заклинания.
@@ -2033,7 +2020,7 @@ async def handle_SkywrathMage_command(message: types.Message):
     await send_SkywrathMage_photo(message)  
 
 async def send_SkywrathMage_photo(message: types.Message):  
-    photo_path = '210.jpg'  
+    photo_path = '2007/210.jpg'  
     caption = '''Skywrath Mage
 Смертоносный, но хрупкий Skywrath Mage быстро
 уничтожает врагов залпами мощной магии.
@@ -2049,7 +2036,7 @@ async def handle_StormSpirit_command(message: types.Message):
     await send_StormSpirit_photo(message)  
 
 async def send_StormSpirit_photo(message: types.Message):  
-    photo_path = '300.jpg'  
+    photo_path = '2007/300.jpg'  
     caption = '''Storm Spirit
 не пропускает ни одного сражения.
 Он молнией проносится по карте,
@@ -2068,7 +2055,7 @@ async def handle_NaturesProphet_command(message: types.Message):
     await send_NaturesProphet_photo(message)  
 
 async def send_NaturesProphet_photo(message: types.Message):  
-    photo_path = '111.jpg'  
+    photo_path = '2007/111.jpg'  
     caption = '''Nature's Prophet
 будто вездусущ: вот он в гуще боя,
 а вот уже подготавливает ресурсы
@@ -2087,7 +2074,7 @@ async def handle_Tinker_command(message: types.Message):
     await send_Tinker_photo(message)  
 
 async def send_Tinker_photo(message: types.Message):  
-    photo_path = '350.jpg'  
+    photo_path = '2007/350.jpg'  
     caption = '''Tinker
 сокрушает врагов своей армией механизмов
 и другими смертоносными устройствами.
@@ -2103,7 +2090,7 @@ async def handle_Warlock_command(message: types.Message):
     await send_Warlock_photo(message)  
 
 async def send_Warlock_photo(message: types.Message):  
-    photo_path = 'Warlock.jpg'  
+    photo_path = '2007/Warlock.jpg'  
     caption = '''Warlock
 Призвав на помощь демона-голема,
 Warlock уничтожает врагов и их постройки.
@@ -2120,7 +2107,7 @@ async def handle_WitchDoctor_command(message: types.Message):
     await send_WitchDoctor_photo(message)  
 
 async def send_WitchDoctor_photo(message: types.Message):  
-    photo_path = 'WitchDoctor.jpg'  
+    photo_path = '2007/WitchDoctor.jpg'  
     caption = '''Witch Doctor
 идеально дополняет любую команду.
 Мало кто сравнится
@@ -2138,7 +2125,7 @@ async def handle_Zeus_command(message: types.Message):
     await send_Zeus_photo(message)  
 
 async def send_Zeus_photo(message: types.Message):  
-    photo_path = '500.jpg'  
+    photo_path = '2007/500.jpg'  
     caption = '''Zeus
 Никому не спастись от ярости Zeus.
 Он использует молнию, чтобы
@@ -2152,13 +2139,140 @@ Zeus найдет врагов, где бы те ни были'''
     with open(photo_path, 'rb') as photo:
         await message.answer_photo(photo, caption=caption)
 
-@dp.message_handler(commands=['', ''])  
-async def handle__command(message: types.Message):  
-    await send__photo(message)  
+@dp.message_handler(commands=['Venomancer', 'venomancer'])  
+async def handle_Venomancer_command(message: types.Message):  
+    await send_Venomancer_photo(message)  
 
-async def send__photo(message: types.Message):  
-    photo_path = ''  
-    caption = ''''''
+async def send_Venomancer_photo(message: types.Message):  
+    photo_path = '2007/Venomancer.jpg'  
+    caption = '''Venomancer
+несёт своим врагам медленную смерть.
+Он взращивает бесконечную армию прыскающих
+ядом защитников, а стоит неприятелям показаться рядом,
+он выпускает огромное облако яда,
+надолго ослабляющего недругов'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['Visage', 'visage'])  
+async def handle_Visage_command(message: types.Message):  
+    await send_Visage_photo(message)  
+
+async def send_Visage_photo(message: types.Message):  
+    photo_path = '2007/Visage.jpg'  
+    caption = '''Visage
+Разведывая смертоносными гаргульями поле боя,
+Visage покрывает себя бронёй и ищет битвы.
+Оказавшись рядом со схваткой,
+он обращает страдания тех, кто получает урон,
+в мощные заряды энергии и сокрушает ими врагов'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+
+@dp.message_handler(commands=['voidspirit', 'voidspirit'])  
+async def handle_VoidSpirit_command(message: types.Message):  
+    await send_VoidSpirit_photo(message)  
+
+async def send_VoidSpirit_photo(message: types.Message):  
+    photo_path = '2007/VoidSpirit.jpg'  
+    caption = '''Void Spirit
+Дух пустоты хранит секреты,
+которые могут расколоть сознание смертного.
+Он покидает Сокрытый храм,
+несёт дозор над всем полем битвы
+и по своей воле может покинуть мир
+смертных и вернуться в него. В мгновения
+нужды взывая к защите скрытой реальности,
+он легко обходит врагов, чтобы ударить,
+откуда он сам пожелает'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+
+@dp.message_handler(commands=['Windranger', 'windranger'])  
+async def handle_Windranger_command(message: types.Message):  
+    await send_Windranger_photo(message)  
+
+async def send_Windranger_photo(message: types.Message):  
+    photo_path = '2007/Windranger.jpg'  
+    caption = '''Windranger
+Проворная и ловкая Windranger
+всегда поджидает подходящего
+момента для нападения. Она постояннo
+в движении — даже когда расчищает путь
+смертоносным выстрелом или связывает врагов,
+чтобы нашпиговать их стрелами'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['WinterWyvern', 'WinterWyvern'])  
+async def handle_WinterWyvern_command(message: types.Message):  
+    await send_WinterWyvern_photo(message)  
+
+async def send_WinterWyvern_photo(message: types.Message):  
+    photo_path = '2007/WinterWyvern.jpg'  
+    caption = '''Winter Wyvern
+бороздит небо над полем боя,
+замедляя врагов жгучим льдом.
+Если враги по глупости столпятся,
+она обернёт их
+против одного из товарищей
+и обдаст всех ледяными осколками''''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['VengefulSpirit', 'VengefulSpirit'])  
+async def handle_VengefulSpirit_command(message: types.Message):  
+    await send_VengefulSpirit_photo(message)  
+
+async def send_VengefulSpirit_photo(message: types.Message):  
+    photo_path = '2007/VengefulSpirit.jpg'  
+    caption = '''Vengeful Spirit
+напоминает о себе даже после смерти.
+Она постоянно сеет хаос в рядах врагов,
+обмениваясь местами с другими героями неподалёку,
+оглушая врагов и ослабляя того, кто её одолеет'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['Snapfire', 'Snapfire'])  
+async def handle_Snapfire_command(message: types.Message):  
+    await send_Snapfire_photo(message)  
+
+async def send_Snapfire_photo(message: types.Message):  
+    photo_path = '2007/Snapfire.jpg'  
+    caption = '''Snapfire
+ будет рада как отстрелить кому-нибудь
+ ноги из своего верного дробовика,
+ так и накормить всех до отвала своим вкусным
+ , но немного взрывным печеньем.
+ Беатрикс с удовольствием рассекает по
+ полю битвы на своей драконьей жабе Мортимере,
+ готовая выкосить врагов своей самодельной
+ крупнокалиберной пушкой и добить их
+ залпом лавовых шаров Мортимера'''
+    
+    with open(photo_path, 'rb') as photo:
+        await message.answer_photo(photo, caption=caption)
+
+@dp.message_handler(commands=['SandKing', 'SandKing'])  
+async def handle_SandKing_command(message: types.Message):  
+    await send_SandKing_photo(message)  
+
+async def send_SandKing_photo(message: types.Message):  
+    photo_path = '2007/SandKing.jpg'  
+    caption = '''Sand King
+Немногие способны пережить нападение Sand King.
+Он разрушает смертоносными волнами ульта всё вокруг себя,
+скрывается от ответных ударов в
+песчаной буре и оглушает врагов, поддевая их снизу'''
     
     with open(photo_path, 'rb') as photo:
         await message.answer_photo(photo, caption=caption)
@@ -2172,5 +2286,8 @@ async def send__photo(message: types.Message):
 
 if __name__ == '__main__':  
     executor.start_polling(dp, skip_updates=True)
+
+
+                
 
                 
