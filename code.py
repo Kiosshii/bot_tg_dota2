@@ -2222,7 +2222,7 @@ async def send_WinterWyvern_photo(message: types.Message):
 Если враги по глупости столпятся,
 она обернёт их
 против одного из товарищей
-и обдаст всех ледяными осколками''''
+и обдаст всех ледяными осколками'''
     
     with open(photo_path, 'rb') as photo:
         await message.answer_photo(photo, caption=caption)
@@ -2286,6 +2286,10 @@ async def send_SandKing_photo(message: types.Message):
 
 if __name__ == '__main__':  
     executor.start_polling(dp, skip_updates=True)
+
+
+                
+
 
 
                 
